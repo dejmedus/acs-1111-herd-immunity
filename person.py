@@ -65,8 +65,8 @@ if __name__ == "__main__":
     # of survival is random you need to check a group of people.
     # Create a list to hold 100 people. Use the loop below to make 100 people
     people = []
-    for i in range(1, 100):
-        people.append(Person(3, False, virus))
+    for i in range(0, 100):
+        people.append(Person(i, False, virus))
 
     # Now that you have a list of 100 people. Resolve whether the Person
     # survives the infection or not by looping over the people list.
@@ -95,15 +95,41 @@ if __name__ == "__main__":
     # For example if the mortality rate is 0.2 rough 20% of the people
     # should succumb.
     print(
-        f'survived: {did_survived} did not: {did_not_survive}')
+        f'survived: {did_survived} did not: {did_not_survive} rate: {virus.mortality_rate}')
 
     # Stretch challenge!
     # Check the infection rate of the virus by making a group of
-    # unifected people. Loop over all of your people.
-    # Generate a random number. If that number is less than the
-    # infection rate of the virus that person is now infected.
-    # Assign the virus to that person's infection attribute.
+    # uninfected people.
+    people = []
+    for i in range(0, 100):
+        people.append(Person(i, False, None))
 
-    # Now count the infected and uninfect people from this group of people.
-    # The number of infectedf people should be roughly the same as the
+    # Now that you have a list of 100 people. Resolve whether the Person
+    # survives the infection or not by looping over the people list.
+    for person in people:
+        # Generate a random number.
+        # If that number is less than the infection rate of the virus that person is now infected.
+        # Assign the virus to that person's infection attribute.
+        chance = random.uniform(0.0, 1.0)
+        was_infected = chance < virus.repro_rate
+        if was_infected:
+            person.infection = virus
+
+    # Now count the infected and uninfected people from this group of people.
+    # The number of infected people should be roughly the same as the
     # infection rate of the virus.
+    is_infected = 0
+    is_not_infected = 0
+
+    for person in people:
+        if person.infection == None:
+            is_not_infected += 1
+        else:
+            is_infected += 1
+
+    # TODO When the loop is complete print your results.
+    # The results should roughly match the mortality rate of the virus
+    # For example if the mortality rate is 0.2 rough 20% of the people
+    # should succumb.
+    print(
+        f'infected: {is_infected} is not infected: {is_not_infected} rate: {virus.repro_rate}')
