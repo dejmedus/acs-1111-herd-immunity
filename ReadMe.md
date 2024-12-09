@@ -29,3 +29,6 @@ python3 -m tests.logger_test
 python3 person.py
 python3 virus.py
 ```
+
+https://github.com/user-attachments/assets/994f8f1e-0f90-4ace-be89-c32740251789
+
