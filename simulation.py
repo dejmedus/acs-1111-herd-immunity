@@ -23,7 +23,7 @@ class Simulation(object):
 
         for i in range(self.pop_size):
             if i < self.initial_infected:
-                people.append(Person(i, False, virus))
+                people.append(Person(i, False, self.virus))
             elif i < amount_vacc + self.initial_infected:
                 people.append(Person(i, True))
             else:
