@@ -19,7 +19,7 @@ class Person(object):
                 self.infection = None
                 self.is_vaccinated = True
 
-            return self.is_alive
+        return self.is_alive
 
 
 if __name__ == "__main__":
