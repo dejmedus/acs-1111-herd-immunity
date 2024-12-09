@@ -56,4 +56,4 @@ def run():
 create_correct_population()
 correct_interaction_results()
 run()
-print("tests passed!")
+print("simulation tests passed!")

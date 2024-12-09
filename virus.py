@@ -10,3 +10,13 @@ if __name__ == "__main__":
     assert virus.name == "HIV"
     assert virus.repro_rate == 0.8
     assert virus.mortality_rate == 0.3
+
+    try:
+        virus = Virus("Missing args")
+        assert False, "Should error due to missing args"
+    except TypeError:
+        pass
+
+    assert isinstance(virus, Virus)
+
+    print("virus tests passed!")

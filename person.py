@@ -82,3 +82,4 @@ if __name__ == "__main__":
 
     print(
         f'infected: {is_infected} is not infected: {is_not_infected} rate: {virus.repro_rate}')
+    print("person tests passed!")
